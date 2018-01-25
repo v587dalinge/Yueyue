@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MainViewController.h"
+#import "PracticeResultController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    MainViewController *main = [[MainViewController alloc] init];
+//    PracticeResultController *practise = [[PracticeResultController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:main];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
